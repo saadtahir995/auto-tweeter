@@ -24,7 +24,7 @@ const tweet=(tweet_text)=>{
   });
 }
 tweets.forEach((tweet_text,index) => {
-  const delay = index * 2 * 60 * 1000; // 2 minutes in milliseconds
+  const delay = index * 60 * 60 * 1000; // 1 hour in milliseconds
   setTimeout(() => {
     tweet(tweet_text);
   }, delay);
