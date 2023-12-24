@@ -8,9 +8,6 @@
           "src": "/(.*)",
           "dest": "/"
         }
-    ],
-    "scripts": {
-      "build": "npm ci",
-      "start": "npm run start"
-    }
+    ]
+    
   }
