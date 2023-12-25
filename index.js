@@ -3,13 +3,13 @@ import fs from 'fs';
 
 // Instantiate with desired auth type (here's Bearer v2 auth)
 const userClient = new TwitterApi({
-  appKey: 'XLMT9tcGER6LSV3hnqyo1omqJ',
-  appSecret: 'NkaoI9xHXJ9g2gcai2bTjDUnaHnEMXxMFPRMRpko3nN06lADfZ',
+  appKey: 'IRE7H7Hz1ODJF0cxtcsLN6P59',
+  appSecret: 'H6GH4r8gvYSJJwMLIKEhdGidWugZcoypWwAIwjOQsBQLL6vHrT',
   // Following access tokens are not required if you are
   // at part 1 of user-auth process (ask for a request token)
   // or if you want a app-only client (see below)
-  accessToken: '4170446783-y9qPkhzy3UkLrIW4uGmAomnNC8QBjzJswdBenOC',
-  accessSecret: '27Zajn9oHxBSDxlBLINLjocmWcNZjCFxyBiQ3M12J2sHg',
+  accessToken: '4170446783-s2s4Q35zzaJubRXa0ENJHp41MK6Gysnj7ibwYHC',
+  accessSecret: 'ZXIDbDoggxZkmci1eMRkGHRm67EP8r0OTVVkljzghVqPn',
 });
 
 const rwClient = userClient.readWrite
