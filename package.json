@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "pm2 start index.js"
   },
   "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "pm2": "^5.3.0",
     "twit": "^2.2.11",
     "twitter-api-v2": "^1.15.2"
   }
