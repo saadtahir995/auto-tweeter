@@ -1,5 +1,7 @@
 import { TwitterApi } from 'twitter-api-v2';
 import fs from 'fs';
+import express from 'express';
+const app = express();
 
 // Instantiate with desired auth type (here's Bearer v2 auth)
 const userClient = new TwitterApi({
@@ -16,13 +18,19 @@ const rwClient = userClient.readWrite
 const getcurrentuser=()=>{
   rwClient.currentUserV2().then((user) => {console.log(user)});
 }
-const tweets = fs.readFileSync('tweets.txt', 'utf-8').split('\n').filter(Boolean);
+
 
 const tweet=(tweet_text)=>{
   rwClient.v2.tweet(tweet_text).then((tweet) => {
     console.log(tweet);
   });
 }
+var count=0;
+app.get('/', (req, res) => {
+  count++;
+  if(count==1){
+  const tweets = fs.readFileSync('tweets.txt', 'utf-8').split('\n').filter(Boolean);
+
 tweets.forEach((tweet_text,index) => {
   // delay of 2 minutes
   const delay = index * 2 * 60 * 1000; // 1 hour in milliseconds
@@ -30,6 +38,12 @@ tweets.forEach((tweet_text,index) => {
     tweet(tweet_text);
   }, delay);
 });
+  }
+  else{
+    res.send("Already started");
+  }
+}
+)
 
 
 
