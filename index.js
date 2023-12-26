@@ -1,15 +1,16 @@
 import { TwitterApi } from 'twitter-api-v2';
 import fs from 'fs';
+import 'dotenv/config'
 
 // Instantiate with desired auth type (here's Bearer v2 auth)
 const userClient = new TwitterApi({
-  appKey: 'IRE7H7Hz1ODJF0cxtcsLN6P59',
-  appSecret: 'H6GH4r8gvYSJJwMLIKEhdGidWugZcoypWwAIwjOQsBQLL6vHrT',
+  appKey: process.env.API_KEY,
+  appSecret: process.env.API_SEC,
   // Following access tokens are not required if you are
   // at part 1 of user-auth process (ask for a request token)
   // or if you want a app-only client (see below)
-  accessToken: '4170446783-s2s4Q35zzaJubRXa0ENJHp41MK6Gysnj7ibwYHC',
-  accessSecret: 'ZXIDbDoggxZkmci1eMRkGHRm67EP8r0OTVVkljzghVqPn',
+  accessToken: process.env.ACCESS_TOKEN,
+  accessSecret: process.env.ACCESS_SECRET,
 });
 
 const rwClient = userClient.readWrite
