@@ -32,9 +32,11 @@ This is a simple Node.js script that automates tweeting using the Twitter API. I
      ACCESS_SECRET=your_access_token_secret
      ```
 
-4. Populate the `tweets.txt` file with the tweets you want to post, each on a new line.
+4. Ensure that your Twitter App has the necessary permissions. Go to your Twitter App settings on the [Twitter Developer Portal](https://developer.twitter.com/en/apps), and under the "App permissions" section, make sure to enable "Read" and "Write" permissions.
 
-5. Adjust the delay between tweets by modifying the `delay` variable in the script (default is 1 minute).
+5. Populate the `tweets.txt` file with the tweets you want to post, each on a new line.
+
+6. Adjust the delay between tweets by modifying the `delay` variable in the script (default is 1 minute).
 
 ## Usage
 
@@ -54,6 +56,8 @@ This will start posting tweets based on the content of `tweets.txt` at the speci
 ## Important Note
 
 Make sure you are compliant with Twitter's API usage policies to avoid any issues with your Twitter account.
+There is a rate limit to posting tweets i.e 50 tweets per day and 1500 tweets per month (only if you are free tier user)
+
 
 ## License
 
